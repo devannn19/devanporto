@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth" style="scroll-padding-top: 5rem">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devan Fathillah Raffasha — Human Tech Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              base: "#0B0D10",
+              card: "#12161C",
+              textMain: "#F5F5F5",
+              textSec: "#9CA3AF",
+              accent: "#60A5FA",
+              borderLight: "rgba(255, 255, 255, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b0d10;
+        color: #f5f5f5;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .glass-nav {
+        background: rgba(11, 13, 16, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(96, 165, 250, 0.3);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      }
+
+      ::selection {
+        background: #60a5fa;
+        color: #0b0d10;
+      }
+
+      /* Styling for image upload overlay */
+      .upload-overlay {
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .group:hover .upload-overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased min-h-screen flex flex-col selection:bg-accent selection:text-base"
+  >
+    <header
+      class="fixed top-0 w-full z-50 glass-nav transition-all duration-300"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="text-xl font-bold tracking-tighter text-textMain hover:text-accent transition-colors"
+        >
+          DEVAN.
+        </a>
+
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-textSec"
+        >
+          <a href="#home" class="hover:text-textMain transition-colors">Home</a>
+          <a href="#about" class="hover:text-textMain transition-colors"
+            >About</a
+          >
+          <a href="#experience" class="hover:text-textMain transition-colors"
+            >Experience</a
+          >
+          <a href="#skills" class="hover:text-textMain transition-colors"
+            >Skills</a
+          >
+          <a href="#projects" class="hover:text-textMain transition-colors"
+            >Projects</a
+          >
+          <a href="#contact" class="hover:text-textMain transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-textSec hover:text-textMain focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-card border-b border-borderLight px-6 py-4 absolute w-full left-0 top-20 flex flex-col gap-4 text-sm font-medium text-textSec shadow-xl"
+      >
+        <a href="#home" class="hover:text-textMain">Home</a>
+        <a href="#about" class="hover:text-textMain">About</a>
+        <a href="#experience" class="hover:text-textMain">Experience</a>
+        <a href="#skills" class="hover:text-textMain">Skills</a>
+        <a href="#projects" class="hover:text-textMain">Projects</a>
+        <a href="#contact" class="hover:text-textMain">Contact</a>
+      </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+      <section id="home" class="min-h-[85vh] flex items-center py-20">
+        <div
+          class="max-w-5xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
+        >
+          <div class="md:col-span-7 order-2 md:order-1 space-y-6 reveal">
+            <div class="inline-block">
+              <span
+                class="text-xs font-semibold tracking-widest uppercase text-accent mb-2 block"
+                >Hello, I'm</span
+              >
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-textMain leading-tight tracking-tight"
+              >
+                Devan Fathillah Raffasha <br />
+                <span
+                  class="text-textSec text-2xl md:text-4xl mt-2 block font-medium"
+                  >Computer System Student <br />& Full Stack Developer</span
+                >
+              </h1>
+            </div>
+
+            <p
+              class="text-base md:text-lg text-textSec leading-relaxed max-w-lg"
+            >
+              Saya senang mempelajari bagaimana software, hardware, dan jaringan
+              dapat bekerja bersama untuk menyelesaikan masalah nyata.
+            </p>
+
+            <div class="flex items-center gap-4 pt-4">
+              <a
+                href="#projects"
+                class="px-6 py-3 rounded-lg bg-textMain text-base text-base font-semibold text-black hover:bg-gray-200 transition-colors"
+              >
+                Lihat Proyek
+              </a>
+              <a
+                href="#about"
+                class="px-6 py-3 rounded-lg bg-card border border-borderLight text-textMain font-medium hover:border-textSec transition-colors"
+              >
+                Tentang Saya
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Profile Image Upload -->
+          <div
+            class="md:col-span-5 order-1 md:order-2 flex justify-center md:justify-end reveal"
+          >
+            <label
+              for="profile-upload"
+              class="cursor-pointer relative w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-card border border-borderLight flex items-center justify-center overflow-hidden group"
+            >
+              <!-- Decorative background -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-50 transition-opacity"
+              ></div>
+
+              <!-- Initial Placeholder -->
+              <div
+                id="profile-placeholder"
+                class="w-full h-full flex flex-col items-center justify-center text-textSec gap-3 z-10 bg-card transition-all"
+              >
+                <span class="text-5xl">👨‍💻</span>
+                <span class="text-sm font-medium tracking-wide"
+                  >KLIK UNTUK UPLOAD FOTO</span
+                >
+              </div>
+
+              <!-- Actual Image -->
+              <img
+                id="profile-img"
+                src="FOTO FORMAL.jpeg"
+                alt="Devan Fathillah Raffasha"
+                class="absolute inset-0 w-full h-full object-cover z-20"
+              />
+
+              <!-- Hover Overlay -->
+              <div
+                class="upload-overlay absolute inset-0 z-30 flex flex-col items-center justify-center text-white backdrop-blur-sm"
+              >
+                <svg
+                  class="w-8 h-8 mb-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span class="text-sm font-medium">Ubah Foto</span>
+              </div>
+
+              <!-- Hidden File Input -->
+              <input
+                type="file"
+                id="profile-upload"
+                accept="image/*"
+                class="hidden"
+              />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-24 bg-card/30 border-y border-borderLight">
+        <div class="max-w-5xl mx-auto px-6 reveal">
+          <span
+            class="text-xs font-semibold tracking-widest uppercase text-textSec mb-8 block"
+            >About Me</span
+          >
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6 text-textSec leading-relaxed">
+              <h2 class="text-2xl font-bold text-textMain">
+                Halo, saya Devan Fathillah Raffasha.
+              </h2>
+              <p>
+                Saya adalah mahasiswa Sistem Komputer yang tertarik pada
+                pengembangan web, database, jaringan komputer, IoT, dan sistem
+                komputer.
+              </p>
+              <p>
+                Saat ini saya terus mengembangkan kemampuan melalui perkuliahan,
+                coding project, dan eksperimen teknologi. Saya mulai tertarik
+                dengan pemrograman karena ingin memahami bagaimana sebuah
+                aplikasi bekerja dari balik layar. Selain dunia teknologi, saya
+                juga memiliki pengalaman dan minat di bidang bisnis dan
+                penjualan.
+              </p>
+              <div class="pt-4">
+                <a
+                  href="https://canva.link/8ltrta361rdsy1m"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-blue-400 transition-colors"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg>
+                  Download CV
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 h-fit">
+              <div
+                class="p-6 rounded-xl bg-card border border-borderLight flex flex-col justify-center items-center text-center"
+              >
+                <span class="text-3xl font-bold text-textMain mb-1">5</span>
+                <span class="text-xs text-textSec uppercase tracking-wider"
+                  >Semester</span
+                >
+              </div>
+              <div
+                class="p-6 rounded-xl bg-card border border-borderLight flex flex-col justify-center items-center text-center"
+              >
+                <span class="text-3xl font-bold text-textMain mb-1">3.76</span>
+                <span class="text-xs text-textSec uppercase tracking-wider"
+                  >IPK Terkini</span
+                >
+              </div>
+              <div
+                class="p-6 rounded-xl bg-card border border-borderLight flex flex-col justify-center items-center text-center col-span-2"
+              >
+                <span class="text-4xl font-bold text-accent mb-1">∞</span>
+                <span class="text-xs text-textSec uppercase tracking-wider"
+                  >Learning</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="py-24">
+        <div class="max-w-5xl mx-auto px-6 reveal">
+          <span
+            class="text-xs font-semibold tracking-widest uppercase text-textSec mb-12 block"
+            >Work Experience</span
+          >
+
+          <div
+            class="space-y-8 border-l border-borderLight ml-3 pl-6 md:pl-8 relative"
+          >
+            <!-- Experience 3 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-[35px] md:-left-[41px] top-1 w-4 h-4 rounded-full bg-base border-2 border-accent group-hover:bg-accent transition-colors"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
+              >
+                <h3 class="text-lg font-bold text-textMain">
+                  Event IIMS PRJ Sales Associate
+                </h3>
+                <span
+                  class="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full w-fit"
+                  >Feb - Mar 2026</span
+                >
+              </div>
+              <p class="text-sm text-textSec font-medium mb-3">
+                PT Berca Sportindo (League)
+              </p>
+              <ul class="text-sm text-textSec space-y-2 list-disc list-inside">
+                <li>
+                  Melayani pelanggan dengan menyambut pembeli, menjawab
+                  pertanyaan, dan memberikan rekomendasi produk.
+                </li>
+                <li>
+                  Membantu mencapai target penjualan dan melakukan penjualan
+                  tambahan (upselling).
+                </li>
+                <li>
+                  Mempelajari dan memproses transaksi secara langsung melalui
+                  sistem mesin kasir.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-[35px] md:-left-[41px] top-1 w-4 h-4 rounded-full bg-base border-2 border-textSec group-hover:border-accent transition-colors"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
+              >
+                <h3 class="text-lg font-bold text-textMain">Data Entry</h3>
+                <span
+                  class="text-xs font-mono text-textSec bg-card border border-borderLight px-3 py-1 rounded-full w-fit"
+                  >2025</span
+                >
+              </div>
+              <p class="text-sm text-textSec font-medium mb-3">
+                Project Spreadsheet Kemenkes
+              </p>
+              <ul class="text-sm text-textSec space-y-2 list-disc list-inside">
+                <li>
+                  Memiliki daya ingat dan konsentrasi yang tinggi untuk input
+                  data massal.
+                </li>
+                <li>
+                  Meliput pengguna BPJS dari website ke spreadsheet dengan
+                  akurasi tinggi.
+                </li>
+                <li>
+                  Bertanggung jawab penuh dalam penginputan data untuk
+                  meminimalisir kekeliruan terhadap klien.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience 1 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-[35px] md:-left-[41px] top-1 w-4 h-4 rounded-full bg-base border-2 border-textSec group-hover:border-accent transition-colors"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
+              >
+                <h3 class="text-lg font-bold text-textMain">
+                  Relasi Vendor & Retail Operations
+                </h3>
+                <span
+                  class="text-xs font-mono text-textSec bg-card border border-borderLight px-3 py-1 rounded-full w-fit"
+                  >2021 - Sekarang</span
+                >
+              </div>
+              <p class="text-sm text-textSec font-medium mb-3">
+                Digital Marketing & Supplier Barang
+              </p>
+              <ul class="text-sm text-textSec space-y-2 list-disc list-inside">
+                <li>
+                  Membuat serta mengedit foto dan video promosi jasa kontrakan
+                  di platform Facebook.
+                </li>
+                <li>
+                  Melayani konsumen yang berminat secara ramah dan responsif.
+                </li>
+                <li>
+                  Mendistribusikan pesanan barang dari customer ke outlet
+                  terkait.
+                </li>
+                <li>
+                  Mempromosikan layanan kepada customer baru untuk meningkatkan
+                  volume pesanan.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="py-24 bg-card/30 border-y border-borderLight">
+        <div class="max-w-5xl mx-auto px-6 reveal">
+          <span
+            class="text-xs font-semibold tracking-widest uppercase text-textSec mb-12 block"
+            >Skills & Technologies</span
+          >
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
+                </svg>
+                Web Development
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >HTML</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >CSS</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >React</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Programming
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Python</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >C / C++</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                  />
+                </svg>
+                Database
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >MySQL</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >SQL</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Database Design</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                  />
+                </svg>
+                Computer System
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Networking</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >IoT</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >ESP32</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Linux</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Computer Hardware</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Data & Operations
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Data Entry & Cleaning</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Validation & Security</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Google Sheets & Excel</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-textMain mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Sales & Marketing
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Direct Sales & Upselling</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >POS Cashier</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Facebook Ads</span
+                >
+                <span
+                  class="px-3.5 py-1.5 rounded-full bg-card border border-borderLight text-sm text-textSec hover:text-accent hover:border-accent transition-colors cursor-default"
+                  >Supply Chain Logistics</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="mb-12 reveal">
+            <span
+              class="text-xs font-semibold tracking-widest uppercase text-textSec mb-2 block"
+              >My Projects</span
+            >
+            <h2 class="text-2xl font-bold text-textMain">
+              Karya dan implementasi teknologi.
+            </h2>
+            <p class="text-sm text-textSec mt-2">
+              Ganti link dan gambar placeholder di bawah dengan project asli
+              milik Anda.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="project-card rounded-2xl bg-card border border-borderLight overflow-hidden flex flex-col reveal group"
+            >
+              <div
+                class="h-48 w-full bg-gradient-to-br from-accent/20 to-transparent border-b border-borderLight relative overflow-hidden flex items-center justify-center"
+              >
+                <span class="text-4xl font-bold text-accent">LAN</span>
+              </div>
+
+              <div class="p-6 flex-grow flex flex-col">
+                <h3 class="text-lg font-bold text-textMain mb-1">
+                  LAN Network Simulation
+                </h3>
+                <p class="text-xs text-accent font-medium mb-4">
+                  Cisco Packet Tracer • Networking • Simulation
+                </p>
+                <p class="text-sm text-textSec leading-relaxed mb-6 flex-grow">
+                  Simulasi jaringan LAN menggunakan Cisco Packet Tracer untuk
+                  memahami konfigurasi perangkat dan komunikasi antar komputer.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="project-card rounded-2xl bg-card border border-borderLight overflow-hidden flex flex-col reveal group"
+            >
+              <div
+                class="h-48 w-full bg-gradient-to-br from-green-500/20 to-transparent border-b border-borderLight relative overflow-hidden flex items-center justify-center"
+              >
+                <span class="text-4xl font-bold text-green-400">ABSEN</span>
+              </div>
+
+              <div class="p-6 flex-grow flex flex-col">
+                <h3 class="text-lg font-bold text-textMain mb-1">
+                  Website Absensi
+                </h3>
+                <p class="text-xs text-accent font-medium mb-4">
+                  PHP • MySQL • Attendance System
+                </p>
+                <p class="text-sm text-textSec leading-relaxed mb-6 flex-grow">
+                  Website absensi sederhana dengan sistem penyimpanan data
+                  menggunakan PHP dan MySQL.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="project-card rounded-2xl bg-card border border-borderLight overflow-hidden flex flex-col reveal group"
+            >
+              <div
+                class="h-48 w-full bg-gradient-to-br from-yellow-500/20 to-transparent border-b border-borderLight relative overflow-hidden flex items-center justify-center"
+              >
+                <span class="text-4xl font-bold text-yellow-400">HACENEM</span>
+              </div>
+
+              <div class="p-6 flex-grow flex flex-col">
+                <h3 class="text-lg font-bold text-textMain mb-1">
+                  Website Toko Online (Hacenem)
+                </h3>
+                <p class="text-xs text-accent font-medium mb-4">
+                  E-commerce • Product Showcase • Online Store
+                </p>
+                <p class="text-sm text-textSec leading-relaxed mb-6 flex-grow">
+                  Website toko online yang dibuat untuk menampilkan produk,
+                  informasi produk, serta fitur dasar dalam proses pembelian.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="project-card rounded-2xl bg-card border border-borderLight overflow-hidden flex flex-col reveal group"
+            >
+              <div
+                class="h-48 w-full bg-gradient-to-br from-purple-500/20 to-transparent border-b border-borderLight relative overflow-hidden flex items-center justify-center"
+              >
+                <span class="text-4xl font-bold text-purple-400">RAIN</span>
+              </div>
+
+              <div class="p-6 flex-grow flex flex-col">
+                <h3 class="text-lg font-bold text-textMain mb-1">
+                  Analisis Data Curah Hujan
+                </h3>
+                <p class="text-xs text-accent font-medium mb-4">
+                  Data Analysis • Weather • 2023 - 2025
+                </p>
+                <p class="text-sm text-textSec leading-relaxed mb-6 flex-grow">
+                  Analisis data curah hujan untuk melihat pola dan perubahan
+                  curah hujan berdasarkan data yang tersedia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-card/30 border-y border-borderLight">
+        <div
+          class="max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16"
+        >
+          <div class="reveal">
+            <span
+              class="text-xs font-semibold tracking-widest uppercase text-textSec mb-8 block"
+              >How I Work</span
+            >
+            <div class="space-y-6">
+              <div
+                class="group border-l-2 border-borderLight pl-5 hover:border-accent transition-colors"
+              >
+                <div class="text-xs font-mono text-textSec mb-1">
+                  01 ── Learn
+                </div>
+                <p
+                  class="text-sm text-textMain group-hover:text-white transition-colors"
+                >
+                  Mempelajari konsep dasar teori dan teknologi yang diperlukan
+                  untuk memecahkan masalah.
+                </p>
+              </div>
+              <div
+                class="group border-l-2 border-borderLight pl-5 hover:border-accent transition-colors"
+              >
+                <div class="text-xs font-mono text-textSec mb-1">
+                  02 ── Build
+                </div>
+                <p
+                  class="text-sm text-textMain group-hover:text-white transition-colors"
+                >
+                  Mengubah ide dan konsep menjadi minimum viable product atau
+                  project sederhana.
+                </p>
+              </div>
+              <div
+                class="group border-l-2 border-borderLight pl-5 hover:border-accent transition-colors"
+              >
+                <div class="text-xs font-mono text-textSec mb-1">
+                  03 ── Test
+                </div>
+                <p
+                  class="text-sm text-textMain group-hover:text-white transition-colors"
+                >
+                  Mencari error (debugging), menganalisa kelemahan logika, dan
+                  memperbaiki implementasi kode.
+                </p>
+              </div>
+              <div
+                class="group border-l-2 border-borderLight pl-5 hover:border-accent transition-colors"
+              >
+                <div class="text-xs font-mono text-textSec mb-1">
+                  04 ── Improve
+                </div>
+                <p
+                  class="text-sm text-textMain group-hover:text-white transition-colors"
+                >
+                  Mengevaluasi project secara menyeluruh dan merencanakan
+                  pengembangan untuk versi berikutnya.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <span
+              class="text-xs font-semibold tracking-widest uppercase text-textSec mb-8 block"
+              >Education</span
+            >
+            <div
+              class="p-6 rounded-2xl bg-card border border-borderLight hover:border-accent/50 transition-colors"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-4"
+              >
+                <div>
+                  <h3 class="text-lg font-bold text-textMain">
+                    Universitas Bung Karno
+                  </h3>
+                  <p class="text-sm text-textSec">Sistem Komputer</p>
+                  <p class="text-xs font-medium text-accent mt-1">IPK: 3.76</p>
+                </div>
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium text-textMain">
+                    2024 — Present
+                  </p>
+                  <p
+                    class="text-xs text-textSec bg-borderLight px-2 py-1 rounded mt-1 inline-block"
+                  >
+                    Semester 5
+                  </p>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-borderLight">
+                <p class="text-xs text-textSec uppercase tracking-wider mb-3">
+                  Focus Area & Activities:
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm text-textSec mb-3">
+                  <span>Computer Systems</span>
+                  <span class="text-borderLight">•</span>
+                  <span>Programming</span>
+                  <span class="text-borderLight">•</span> <span>Database</span>
+                  <span class="text-borderLight">•</span>
+                  <span>Networking</span>
+                  <span class="text-borderLight">•</span>
+                  <span>IoT</span>
+                </div>
+                <ul
+                  class="text-xs text-textSec list-disc list-inside space-y-1"
+                >
+                  <li>Aktif mengikuti berbagai seminar teknologi.</li>
+                  <li>
+                    Memberikan informasi yang dibutuhkan pada dosen dan
+                    mahasiswa.
+                  </li>
+                  <li>Organisasi HIMA & BEM FIKOM.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- High School -->
+            <div
+              class="mt-4 p-6 rounded-2xl bg-base border border-borderLight opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-start justify-between gap-2"
+              >
+                <div>
+                  <h3 class="text-base font-bold text-textMain">
+                    SMA Al Kamal
+                  </h3>
+                  <p class="text-sm text-textSec">Jurusan IPS</p>
+                </div>
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium text-textMain">2021 — 2024</p>
+                </div>
+              </div>
+            </div>
+
+            <span
+              class="text-xs font-semibold tracking-widest uppercase text-textSec mt-12 mb-8 block"
+              >Certifications</span
+            >
+            <div class="space-y-4">
+              <div
+                class="p-4 rounded-xl bg-card border border-borderLight hover:border-accent/50 transition-colors"
+              >
+                <h4 class="text-sm font-bold text-textMain">
+                  Google Student Ambassador
+                </h4>
+                <p class="text-xs text-textSec mt-1">
+                  Universitas Bung Karno • 2025
+                </p>
+              </div>
+              <div
+                class="p-4 rounded-xl bg-card border border-borderLight hover:border-accent/50 transition-colors"
+              >
+                <h4 class="text-sm font-bold text-textMain">
+                  Cyber Security & Data Engineering (BNSP)
+                </h4>
+                <p class="text-xs text-textSec mt-1">
+                  Telkom University • 2025
+                </p>
+              </div>
+              <div
+                class="p-4 rounded-xl bg-card border border-borderLight hover:border-accent/50 transition-colors"
+              >
+                <h4 class="text-sm font-bold text-textMain">
+                  AI for Freelancer, Job Seeker & Automation (n8n)
+                </h4>
+                <p class="text-xs text-textSec mt-1">AIFEST • 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-24">
+        <div class="max-w-2xl mx-auto px-6 text-center reveal">
+          <span
+            class="text-xs font-semibold tracking-widest uppercase text-textSec mb-4 block"
+            >Let's Connect</span
+          >
+
+          <p class="text-lg md:text-xl text-textMain mb-8 leading-relaxed">
+            Punya project, pertanyaan, atau ingin berdiskusi tentang teknologi
+            dan bisnis? <br />
+            <span class="text-textSec">Saya terbuka untuk berkolaborasi.</span>
+          </p>
+
+          <div class="flex flex-wrap justify-center items-center gap-6 mb-12">
+            <a
+              href="https://github.com/devannn19"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-medium text-textSec hover:text-textMain transition-colors flex items-center gap-2 border-b border-transparent hover:border-textMain pb-1"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/devan-fathillah-raffasha-32a637336/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-medium text-textSec hover:text-textMain transition-colors flex items-center gap-2 border-b border-transparent hover:border-textMain pb-1"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/devannn19/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-medium text-textSec hover:text-textMain transition-colors flex items-center gap-2 border-b border-transparent hover:border-textMain pb-1"
+            >
+              Instagram
+            </a>
+          </div>
+
+          <div class="border-t border-borderLight pt-8">
+            <p class="text-sm text-textSec mb-2">Email:</p>
+            <a
+              href="https://mail.google.com/mail/devanraffasha4343@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xl md:text-2xl font-medium text-textMain hover:text-accent transition-colors block mb-2"
+            >
+              devanraffasha4343@gmail.com
+            </a>
+            <p class="text-sm text-textSec mb-2 mt-4">WhatsApp:</p>
+            <a
+              href="https://wa.me/6285658999425"
+              target="_blank"
+              class="text-lg font-medium text-textMain hover:text-green-400 transition-colors inline-flex items-center gap-2"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+              +6285658999425
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-card border-t border-borderLight py-12">
+      <div
+        class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div class="text-center md:text-left">
+          <div class="text-lg font-bold text-textMain tracking-tighter mb-1">
+            DEVAN.
+          </div>
+          <p class="text-xs text-textSec">Devan Fathillah Raffasha</p>
+          <p class="text-xs text-textSec mt-1">
+            Computer System Student • Full Stack Developer
+          </p>
+        </div>
+
+        <div class="text-center md:text-right">
+          <p class="text-[11px] text-textSec">
+            © 2026 Devan Fathillah Raffasha.
+          </p>
+          <p class="text-[11px] text-textSec mt-1">
+            Built with HTML, Tailwind CSS & JavaScript.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- Mobile Menu Toggle ---
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // --- Scroll Reveal Animation ---
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", reveal);
+      reveal();
+
+      // --- Profile Image Upload Logic ---
+      const uploadInput = document.getElementById("profile-upload");
+      const profileImg = document.getElementById("profile-img");
+      const placeholder = document.getElementById("profile-placeholder");
+
+      profileImg.src = "FOTO FORMAL.jpeg";
+      profileImg.classList.remove("hidden");
+      placeholder.classList.add("hidden");
+
+      uploadInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            // Set source of image to uploaded file data
+            profileImg.src = event.target.result;
+
+            // Show image, hide placeholder
+            profileImg.classList.remove("hidden");
+            placeholder.classList.add("hidden");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+  </body>
+</html>
